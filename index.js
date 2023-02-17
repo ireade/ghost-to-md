@@ -192,9 +192,7 @@ data.db[0].data.posts.forEach(function(post) {
     fileName = 'page-' + post.slug + '.md';
   }
   // Currently the ghost export file does not include markdown
-  post.markdown = html2md(post.html, {
-    skipTags: ['table']
-  })
+  post.markdown = html2md(post.html)
   // File content.
   var fileContent = postTemplate({
     post: post
